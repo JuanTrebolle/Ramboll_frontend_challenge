@@ -10,14 +10,13 @@ const FlipCard: React.FC<FlipCardProps> = ({ image, description }) => {
     const [isFlipped, setIsFlipped] = useState(false);
 
     const handleClick = () => {
-        setIsFlipped((prevFlipped) => !prevFlipped); // This is not necessary here
         setIsFlipped(!isFlipped); // Directly set the opposite value
         };
 
     return (
         <div className="flex min-h-screen items-center justify-center">
             <div
-                className="group h-96 w-80 [perspective:1000px]"
+                className="h-96 w-80 [perspective:1000px]"
                 onClick={handleClick}
             >
                 <div className={`relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] ${isFlipped ? 'transform rotate-y-180'  : ''}`} >
